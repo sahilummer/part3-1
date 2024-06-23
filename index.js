@@ -58,7 +58,7 @@ app.get("/api/persons", (request, response) => {
 
 app.get("/api/persons/:id", (request, response) => {
     const personId = new Number(request.params.id);
-    const person = persons.filter(currentPerson => currentPerson.id = personId);
+    const person = persons.filter(currentPerson => currentPerson.id == personId);
 
     return person ? response.send(person) : response.status(502).send(`Person ${personId} not found`);
 });
